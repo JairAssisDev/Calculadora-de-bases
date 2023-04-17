@@ -69,8 +69,24 @@ def decPoctal():
     return resutado
 
 #octal para decimal
+def octalPdec():
+    x=str(input("coloque um numero na base 8 para transformar base 10:"))
+    lista=[]
+    resutado=[]
+    for caractere in x:
+            lista.append(int(caractere))
+    a=0
+    for g in reversed(range(len(lista))):
+        item=lista[a]
+        a+=1
+        y=8**g
+        x=item*y
+        resutado.append(x)
+        
+    resutado.reverse()
+
+    return sum(resutado)
 
 
-
-x=decPoctal()
+x=octalPdec()
 print(x)
