@@ -56,3 +56,21 @@ def hexaPdec():
     return sum(resutado)
 
 #decimal para octal
+def decPoctal():
+    x=int(input("coloque um numero na base 10 para transformar base 8:"))
+
+    lista=[]
+    while x>0:
+        a=x%8
+        x=x//8
+        lista.append(a)
+    lista.reverse()
+    resutado = ''.join(str(elemento) for elemento in lista)
+    return resutado
+
+#octal para decimal
+
+
+
+x=decPoctal()
+print(x)
