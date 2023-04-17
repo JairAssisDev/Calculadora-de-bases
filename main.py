@@ -84,9 +84,74 @@ def octalPdec():
         resutado.append(x)
         
     resutado.reverse()
-
     return sum(resutado)
 
+#decimal para binario
+def decPbinario():
+    x = int(input("Coloque um número na base 10 para transformar em binário:"))
+    lista = []
+    while x > 0:
+        a = x % 2
+        x = x // 2
+        lista.append(a)
+    lista.reverse()
+    resultado = ''.join(str(elemento) for elemento in lista)
+    resultado = '{:0>4}'.format(resultado) 
+    return resultado
 
-x=octalPdec()
-print(x)
+#binário para decimal
+def binarioPdec():
+    x=str(input("coloque um numero em binário transformar para base 10:"))
+    lista=[]
+    resutado=[]
+    for caractere in x:
+        if caractere.isdigit():
+            lista.append(int(caractere))
+    a=0
+    for g in reversed(range(len(lista))):
+        item=lista[a]
+        a+=1
+        y=2**g
+        x=item*y
+        resutado.append(x)
+    
+    resutado.reverse()
+    return sum(resutado)
+while True:
+    print("Escolha uma opção:")
+    print("1. Decimal para binário")
+    print("2. Decimal para octal")
+    print("3. Decimal para hexadecimal")
+    print("4. Binário para decimal")
+    print("5. Octal para decimal")
+    print("6. Hexadecimal para decimal")
+    print("")
+    print("7. Sair")
+    inputUser=str(input("Digite sua opção: "))
+    if inputUser == "1":
+        x=decPbinario()
+        print("Seu resutado é ",x)
+    elif inputUser=="2":
+        x=decPoctal()
+        print("Seu resutado é ",x)
+    elif inputUser=="3":
+        x=decPhexa()
+        print("Seu resutado é ",x)
+    elif inputUser=="4":
+        x=binarioPdec()
+        print("Seu resutado é ",x)
+    elif inputUser=="5":
+        x=octalPdec()
+        print("Seu resutado é ",x)
+        
+    elif inputUser=="6":
+        x=hexaPdec()
+        print("Seu resutado é ",x)
+    elif inputUser=="7":
+        print("Obrigado por participar S2 ")
+        print('   _/﹋\_  ')
+        print('   (҂`_´)  ')
+        print('   <,︻╦╤─ ')
+        print('  _/﹋\_   ')
+        print(' SR.JAIR.ASSIS.DEV ')
+        break
