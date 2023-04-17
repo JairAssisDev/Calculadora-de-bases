@@ -54,3 +54,5 @@ def hexaPdec():
         x=item*y
         resutado.append(x)
     return sum(resutado)
+
+#decimal para octal
